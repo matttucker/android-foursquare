@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android-Foursquare</string>
+    <string name="getstarted">Android-Foursquare</string>
+    <string name="mantra">Demonstration of Foursquare authentication and authorization.</string>
+    <string name="main">Successfully signed in!</string>
+    <string name="foursquare_connect">Foursquare Connect</string>
+    <string name="menu_quit">Signout</string>
+
+</resources>
