@@ -1,3 +1,7 @@
+/**
+ * @author matt@geozen.com
+ */
+
 package com.geozen.demo.foursquare.main;
 
 import android.app.Activity;
@@ -23,41 +27,37 @@ public class SigninActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
-		
 		super.onCreate(savedInstanceState);
 
-		//Remove title bar
+		// Remove title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		
+
 		setContentView(R.layout.signin);
 
-		
 		mApp = (GeoZenApplication) getApplication();
-		
-		
-		
+
 		if (mApp.mFoursquare.isSessionValid()) {
 			// We're authed so go directly to the site.
 			Intent intent = new Intent(this, MainActivity.class);
-//			Toast.makeText(this, "Signin SUCCESS", Toast.LENGTH_LONG).show();
 
 			startActivity(intent);
 			finish();
-		} 
-		
+		}
+
 		ImageButton connect = (ImageButton) findViewById(R.id.connectButton);
 		connect.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-//				mApp.mFoursquare.authorize(SigninActivity.this, new FoursquareAuthenDialogListener());
-				mApp.mFoursquare.authorize(SigninActivity.this, new FoursquareAuthenDialogListener());
-			}});
+				mApp.mFoursquare.authorize(SigninActivity.this,
+						new FoursquareAuthenDialogListener());
+			}
+		});
 
 	}
-	
+
 	public void onPause() {
-		
+
 		mApp.mFoursquare.dismissDialog();
 		super.onPause();
 	}
@@ -71,8 +71,6 @@ public class SigninActivity extends Activity {
 			editor.commit();
 
 			Intent intent = new Intent(SigninActivity.this, MainActivity.class);
-//			Toast.makeText(SigninActivity.this, "Signin SUCCESS",
-//					Toast.LENGTH_LONG).show();
 			startActivity(intent);
 			finish();
 		}
@@ -95,5 +93,4 @@ public class SigninActivity extends Activity {
 
 	}
 
-	
 }

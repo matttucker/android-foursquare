@@ -8,20 +8,20 @@ package com.geozen.demo.foursquare.error;
  * @author Joe LaPenna (joe@joelapenna.com)
  */
 public class GeoZenException extends Exception {
-    private static final long serialVersionUID = 1L;
-    
-    private String mExtra;
+	private static final long serialVersionUID = 1L;
 
-    public GeoZenException(String message) {
-        super(message);
-    }
+	private String mExtra;
 
-    public GeoZenException(String message, String extra) {
-        super(message);
-        mExtra = extra;
-    }
-    
-    public String getExtra() {
-        return mExtra;
-    }
+	public GeoZenException(String message) {
+		super(message);
+	}
+
+	public GeoZenException(String message, String extra) {
+		super(message);
+		mExtra = extra;
+	}
+
+	public String getExtra() {
+		return mExtra;
+	}
 }

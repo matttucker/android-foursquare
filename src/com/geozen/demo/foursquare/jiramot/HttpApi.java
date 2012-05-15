@@ -28,7 +28,6 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
-
 /**
  * @author Matt Tucker
  */
@@ -49,7 +48,7 @@ public class HttpApi {
 	public HttpApi() {
 		this(createHttpClient(), DEFAULT_CLIENT_VERSION);
 	}
-	
+
 	public HttpApi(DefaultHttpClient httpClient, String clientVersion) {
 		mHttpClient = httpClient;
 		mClientVersion = clientVersion;
@@ -58,8 +57,6 @@ public class HttpApi {
 	public HttpApi(String clientVersion) {
 		this(createHttpClient(), clientVersion);
 	}
-
-
 
 	public String get(String url, List<NameValuePair> params)
 			throws IOException {
@@ -117,8 +114,7 @@ public class HttpApi {
 	public HttpGet createHttpGet(String url, List<NameValuePair> params) {
 		if (DEBUG)
 			LOG.log(Level.FINE, "creating HttpGet for: " + url);
-		String query = URLEncodedUtils.format(stripNulls(params),
-				HTTP.UTF_8);
+		String query = URLEncodedUtils.format(stripNulls(params), HTTP.UTF_8);
 		HttpGet httpGet = new HttpGet(url + "?" + query);
 		httpGet.addHeader(CLIENT_VERSION_HEADER, mClientVersion);
 		if (DEBUG)
@@ -132,8 +128,8 @@ public class HttpApi {
 		HttpPost httpPost = new HttpPost(url);
 		httpPost.addHeader(CLIENT_VERSION_HEADER, mClientVersion);
 		try {
-			httpPost.setEntity(new UrlEncodedFormEntity(
-					stripNulls(params), HTTP.UTF_8));
+			httpPost.setEntity(new UrlEncodedFormEntity(stripNulls(params),
+					HTTP.UTF_8));
 		} catch (UnsupportedEncodingException e1) {
 			throw new IllegalArgumentException(
 					"Unable to encode http parameters.");
@@ -200,5 +196,4 @@ public class HttpApi {
 		return params;
 	}
 
-	
 }

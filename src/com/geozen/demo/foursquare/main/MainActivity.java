@@ -1,3 +1,7 @@
+/**
+ * @author matt@geozen.com
+ */
+
 package com.geozen.demo.foursquare.main;
 
 import static com.geozen.demo.foursquare.app.Config.DEBUG;

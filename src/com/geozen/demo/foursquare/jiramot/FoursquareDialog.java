@@ -46,7 +46,6 @@ import com.geozen.demo.foursquare.jiramot.Foursquare.DialogListener;
 
 import static com.geozen.demo.foursquare.app.Config.*;
 
-
 public class FoursquareDialog extends Dialog {
 
 	static final int FB_BLUE = 0xFF0cbadf;
@@ -146,7 +145,7 @@ public class FoursquareDialog extends Dialog {
 			} else if (url.contains(DISPLAY_STRING)) {
 				return false;
 			}
-			
+
 			getContext().startActivity(
 					new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
 			return true;
@@ -182,7 +181,8 @@ public class FoursquareDialog extends Dialog {
 			try {
 				mSpinner.dismiss();
 			} catch (Exception e) {
-				Log.w(LOGTAG,"Could not close foursquare dialog progress view correctly.");
+				Log.w(LOGTAG,
+						"Could not close foursquare dialog progress view correctly.");
 			}
 
 		}

@@ -1,5 +1,5 @@
 /**
- * Copyright 2009 Joe LaPenna
+ * @author matt@geozen.com
  */
 
 package com.geozen.demo.foursquare.app;
